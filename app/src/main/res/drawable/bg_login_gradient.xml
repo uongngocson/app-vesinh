@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Background gradient cho màn hình đăng nhập -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="135"
+        android:startColor="#31cb95"
+        android:centerColor="#2bb885"
+        android:endColor="#25a575"
+        android:type="linear" />
+</shape>
+

@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Laundry App UI</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_notification">Notification</string>
+    <string name="menu_message">Message</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="version_app">version 1.1</string>
+    <string name="recommended">Recommended</string>
+    <string name="more">More</string>
+    <string name="dry_cleaning">Dry Cleaning</string>
+    <string name="wash_and_iron"><![CDATA[Wash & Iron]]></string>
+    <string name="ironing">Ironing</string>
+    <string name="choose_services">Choose Services</string>
+    
+    <!-- Login Screen -->
+    <string name="login_welcome">Chào mừng trở lại!</string>
+    <string name="login_title">Đăng Nhập</string>
+    <string name="login_subtitle">Đăng nhập để tiếp tục sử dụng ứng dụng</string>
+    <string name="email">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="login">Đăng Nhập</string>
+    <string name="or">Hoặc</string>
+    <string name="dont_have_account">Chưa có tài khoản?</string>
+    <string name="sign_up">Đăng ký</string>
+    
+    <!-- Validation Messages -->
+    <string name="error_empty_email">Vui lòng nhập email</string>
+    <string name="error_invalid_email">Email không hợp lệ</string>
+    <string name="error_empty_password">Vui lòng nhập mật khẩu</string>
+    <string name="error_invalid_password">Mật khẩu phải có ít nhất 6 ký tự</string>
+    
+    <!-- Login Messages -->
+    <string name="login_success">Đăng nhập thành công!</string>
+    <string name="login_failed">Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.</string>
+    <string name="login_error">Có lỗi xảy ra. Vui lòng thử lại.</string>
+    
+    <!-- Demo Account Info -->
+    <string name="demo_email">demo@laundry.com</string>
+    <string name="demo_password">123456</string>
+    
+    <!-- Logout -->
+    <string name="logout">Đăng Xuất</string>
+    <string name="logout_confirmation">Bạn có chắc muốn đăng xuất?</string>
+    <string name="yes">Có</string>
+    <string name="no">Không</string>
+</resources>
