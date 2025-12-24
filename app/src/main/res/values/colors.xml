@@ -13,4 +13,12 @@
     <color name="orange">#f7991b</color>
     <color name="dark_gray">#A9A9A9</color>
     <color name="dark_late_gray">#2b3e50</color>
+    
+    <!-- App Colors -->
+    <color name="primary">#31cb95</color>
+    <color name="primary_light">#E8F5F0</color>
+    <color name="background_gray">#F5F5F5</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="divider_color">#E0E0E0</color>
 </resources>

@@ -1,6 +1,7 @@
 package com.project.laundryappui.menu.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,10 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.project.laundryappui.R;
 import com.project.laundryappui.menu.home.adapter.HomeAdapter;
 import com.project.laundryappui.menu.home.model.HomeModel;
+import com.project.laundryappui.services.ServiceDetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +29,11 @@ public class HomeFragment extends Fragment {
     private LinearLayoutManager layoutManager;
     private HomeAdapter homeAdapter;
     private List<HomeModel> homeModelList;
+    
+    private RelativeLayout serviceIroning;
+    private RelativeLayout serviceWashIron;
+    private RelativeLayout serviceDryClean;
+    private RelativeLayout serviceMore;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,8 +45,48 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        initServiceViews(view);
+        setupServiceClickListeners();
         setAdapterType(view);
         setAdapter();
+    }
+    
+    private void initServiceViews(View view) {
+        // Find the service icon containers by their parent layout
+        View container = view.findViewById(R.id.container_choose_service);
+        if (container instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) container;
+            if (viewGroup.getChildCount() >= 4) {
+                serviceIroning = (RelativeLayout) viewGroup.getChildAt(0);
+                serviceWashIron = (RelativeLayout) viewGroup.getChildAt(1);
+                serviceDryClean = (RelativeLayout) viewGroup.getChildAt(2);
+                serviceMore = (RelativeLayout) viewGroup.getChildAt(3);
+            }
+        }
+    }
+    
+    private void setupServiceClickListeners() {
+        if (serviceIroning != null) {
+            serviceIroning.setOnClickListener(v -> openServiceDetail("IRONING"));
+        }
+        
+        if (serviceWashIron != null) {
+            serviceWashIron.setOnClickListener(v -> openServiceDetail("WASH_IRON"));
+        }
+        
+        if (serviceDryClean != null) {
+            serviceDryClean.setOnClickListener(v -> openServiceDetail("DRY_CLEAN"));
+        }
+        
+        if (serviceMore != null) {
+            serviceMore.setOnClickListener(v -> openServiceDetail("MORE"));
+        }
+    }
+    
+    private void openServiceDetail(String serviceType) {
+        Intent intent = new Intent(mContext, ServiceDetailActivity.class);
+        intent.putExtra("SERVICE_TYPE", serviceType);
+        startActivity(intent);
     }
 
     private void initData() {

@@ -9,13 +9,93 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="version_app">version 1.1</string>
-    <string name="recommended">Recommended</string>
-    <string name="more">More</string>
-    <string name="dry_cleaning">Dry Cleaning</string>
-    <string name="wash_and_iron"><![CDATA[Wash & Iron]]></string>
-    <string name="ironing">Ironing</string>
-    <string name="choose_services">Choose Services</string>
+    <string name="recommended">Đề xuất</string>
+    <string name="more">Khác</string>
+    <string name="dry_cleaning">Giặt khô</string>
+    <string name="wash_and_iron"><![CDATA[Giặt + Ủi]]></string>
+    <string name="ironing">Ủi đồ</string>
+    <string name="choose_services">Chọn dịch vụ</string>
+
+    <!-- Home Screen Additional -->
+    <string name="promo_banner_title">Giảm 30% cho đơn đầu</string>
+    <string name="promo_banner_desc">Áp dụng cho khách hàng mới</string>
+    <string name="quick_access">Truy cập nhanh</string>
+    <string name="track_order">Theo dõi</string>
+    <string name="promo_codes">Mã giảm</string>
+    <string name="schedule">Lịch hẹn</string>
+    <string name="membership_card">Thẻ VIP</string>
+    <string name="special_offers">Ưu đãi đặc biệt</string>
+    <string name="flash_sale">Flash Sale</string>
+    <string name="discount_up_to">Giảm đến</string>
+    <string name="today_only">Chỉ hôm nay</string>
+    <string name="grab_now">Đặt ngay</string>
+    <string name="popular_services">Dịch vụ phổ biến</string>
+    <string name="see_all">Xem tất cả</string>
+    <string name="express_service">Dịch vụ nhanh</string>
+    <string name="ready_in_hours">Xong trong 3h</string>
+    <string name="premium_care">Cao cấp</string>
+    <string name="best_quality">Chất lượng #1</string>
+    <string name="eco_friendly">Thân thiện MT</string>
+    <string name="green_cleaning">100% tự nhiên</string>
+
+    <!-- Service Detail Screen -->
+    <string name="service_detail">Chi tiết dịch vụ</string>
+    <string name="service_description">Mô tả dịch vụ</string>
+    <string name="price_list">Bảng giá</string>
+    <string name="item_type">Loại đồ</string>
+    <string name="price">Giá</string>
+    <string name="estimated_time">Thời gian ước tính</string>
+    <string name="service_features">Đặc điểm dịch vụ</string>
+    <string name="add_to_cart">Thêm vào giỏ</string>
+    <string name="book_now">Đặt ngay</string>
+    <string name="quantity">Số lượng</string>
+    <string name="total">Tổng cộng</string>
+    <string name="select_items">Chọn đồ</string>
     
+    <!-- Service Types -->
+    <string name="ironing_service">Dịch vụ ủi đồ</string>
+    <string name="ironing_desc">Ủi đồ chuyên nghiệp, phẳng phiu, thơm tho</string>
+    <string name="wash_iron_service">Dịch vụ giặt và ủi</string>
+    <string name="wash_iron_desc">Giặt sạch và ủi phẳng, tiết kiệm thời gian</string>
+    <string name="dry_clean_service">Dịch vụ giặt khô</string>
+    <string name="dry_clean_desc">Giặt khô cao cấp cho đồ sang trọng</string>
+    
+    <!-- Item Types -->
+    <string name="shirt">Áo sơ mi</string>
+    <string name="t_shirt">Áo thun</string>
+    <string name="pants">Quần dài</string>
+    <string name="jeans">Quần jean</string>
+    <string name="dress">Váy/Đầm</string>
+    <string name="suit">Vest/Com lê</string>
+    <string name="jacket">Áo khoác</string>
+    <string name="sweater">Áo len</string>
+    <string name="skirt">Chân váy</string>
+    <string name="shorts">Quần short</string>
+    <string name="blanket">Chăn/Mền</string>
+    <string name="curtain">Rèm cửa</string>
+    <string name="bedsheet">Ga trải giường</string>
+    <string name="towel">Khăn tắm</string>
+    
+    <!-- Time Estimates -->
+    <string name="hours_24">24 giờ</string>
+    <string name="hours_48">48 giờ</string>
+    <string name="hours_72">72 giờ</string>
+    <string name="express_2h">Nhanh 2h</string>
+    <string name="express_3h">Nhanh 3h</string>
+    
+    <!-- Features -->
+    <string name="feature_quality">Chất lượng cao</string>
+    <string name="feature_fast">Nhanh chóng</string>
+    <string name="feature_safe">An toàn cho vải</string>
+    <string name="feature_fragrant">Thơm lâu</string>
+    <string name="feature_eco">Thân thiện môi trường</string>
+    <string name="feature_premium">Dịch vụ cao cấp</string>
+    
+    <!-- Prices (VND) -->
+    <string name="vnd">đ</string>
+    <string name="per_item">/món</string>
+    <string name="per_kg">/kg</string>
+
     <!-- Login Screen -->
     <string name="login_welcome">Chào mừng trở lại!</string>
     <string name="login_title">Đăng Nhập</string>
@@ -48,4 +128,163 @@
     <string name="logout_confirmation">Bạn có chắc muốn đăng xuất?</string>
     <string name="yes">Có</string>
     <string name="no">Không</string>
+    <!-- Sign Up -->
+    <string name="create_account">Tạo Tài Khoản</string>
+    <string name="full_name">Họ và tên</string>
+    <string name="phone_optional">Số điện thoại</string>
+    <string name="password_requirement">Tối thiểu 8 ký tự, có chữ hoa, chữ thường và số</string>
+    <string name="already_have_account">Đã có tài khoản?</string>
+    <!-- Change Password -->
+    <string name="change_password">Đổi Mật Khẩu</string>
+    <string name="current_password">Mật khẩu hiện tại</string>
+    <string name="new_password">Mật khẩu mới</string>
+    <string name="confirm_password">Xác nhận mật khẩu</string>
+    <string name="change_password_success">Đổi mật khẩu thành công. Vui lòng đăng nhập lại.</string>
+    <!-- Forgot Password -->
+    <string name="forgot_password_title">Quên Mật Khẩu?</string>
+    <string name="forgot_password_subtitle">Nhập email của bạn và chúng tôi sẽ gửi link đặt lại mật khẩu</string>
+    <string name="send_reset_link">Gửi Link Đặt Lại</string>
+    <string name="back_to_login">← Quay lại Đăng nhập</string>
+    <!-- My Account -->
+    <string name="my_account">Tài Khoản Của Tôi</string>
+    <string name="profile_information">Thông Tin Cá Nhân</string>
+    <string name="phone">Số điện thoại</string>
+    <string name="gender">Giới tính</string>
+    <string name="male">Nam</string>
+    <string name="female">Nữ</string>
+    <string name="other">Khác</string>
+    <string name="date_of_birth">Ngày sinh</string>
+    <string name="save_changes">Lưu Thay Đổi</string>
+    <string name="avatar">Ảnh đại diện</string>
+    <string name="customer">Khách Hàng</string>
+    <string name="admin">Quản Trị Viên</string>
+    <string name="staff">Nhân Viên</string>
+    <string name="membership">Thành Viên</string>
+    <string name="current_tier">Hạng</string>
+    <string name="total_points">Điểm tích lũy</string>
+    <string name="account_balance">Số dư tài khoản</string>
+    <string name="total_spent">Tổng chi tiêu</string>
+    <string name="update_profile_success">Cập nhật thông tin thành công!</string>
+    <string name="error_empty_name">Vui lòng nhập họ tên</string>
+    <string name="error_invalid_name">Họ tên phải có ít nhất 2 ký tự</string>
+    <string name="error_invalid_phone">Số điện thoại không hợp lệ</string>
+    <string name="loading">Đang tải…</string>
+
+    <!-- Support Screen -->
+    <string name="support">Hỗ Trợ</string>
+    <string name="support_subtitle">Chúng tôi luôn sẵn sàng hỗ trợ bạn</string>
+    <string name="frequently_asked_questions">Câu Hỏi Thường Gặp</string>
+    <string name="contact_us">Liên Hệ Chúng Tôi</string>
+    <string name="live_chat">Chat Trực Tiếp</string>
+    <string name="submit_ticket">Gửi Yêu Cầu Hỗ Trợ</string>
+    <string name="support_categories">Danh Mục Hỗ Trợ</string>
+    <string name="general_questions">Câu Hỏi Chung</string>
+    <string name="account_support">Hỗ Trợ Tài Khoản</string>
+    <string name="service_issues">Vấn Đề Dịch Vụ</string>
+    <string name="payment_billing">Thanh Toán &amp; Hóa Đơn</string>
+    <string name="technical_support">Hỗ Trợ Kỹ Thuật</string>
+    <string name="feedback_suggestions">Phản Hồi &amp; Góp Ý</string>
+    <string name="how_to_use_app">Cách Sử Dụng Ứng Dụng</string>
+    <string name="order_tracking">Theo Dõi Đơn Hàng</string>
+    <string name="pricing_plans">Giá Cả &amp; Gói Dịch Vụ</string>
+
+    <!-- Contact Information -->
+    <string name="phone_support">Hotline: 1900 XXX XXX</string>
+    <string name="email_support">Email: support@laundryapp.com</string>
+    <string name="working_hours">Giờ làm việc: 7:00 - 22:00</string>
+    <string name="response_time">Thời gian phản hồi: Trong vòng 24h</string>
+
+    <!-- Chat & Ticket -->
+    <string name="start_chat">Bắt Đầu Chat</string>
+    <string name="create_ticket">Tạo Ticket</string>
+    <string name="subject">Tiêu đề</string>
+    <string name="message">Nội dung tin nhắn</string>
+    <string name="priority">Mức độ ưu tiên</string>
+    <string name="low">Thấp</string>
+    <string name="medium">Trung bình</string>
+    <string name="high">Cao</string>
+    <string name="urgent">Khẩn cấp</string>
+    <string name="submit">Gửi</string>
+    <string name="chat_online">Chat Online</string>
+    <string name="chat_offline">Chat Offline</string>
+
+    <!-- FAQ Items -->
+    <string name="faq_how_to_order">Làm thế nào để đặt đơn hàng?</string>
+    <string name="faq_payment_methods">Các phương thức thanh toán nào được chấp nhận?</string>
+    <string name="faq_delivery_time">Thời gian giao nhận là bao lâu?</string>
+    <string name="faq_cancel_order">Làm thế nào để hủy đơn hàng?</string>
+    <string name="faq_refund_policy">Chính sách hoàn tiền như thế nào?</string>
+    <string name="faq_membership_benefits">Lợi ích của thành viên là gì?</string>
+    <string name="faq_track_order">Làm thế nào để theo dõi đơn hàng?</string>
+    <string name="faq_change_address">Làm thế nào để thay đổi địa chỉ giao hàng?</string>
+
+    <!-- Success/Error Messages -->
+    <string name="ticket_created_success">Ticket hỗ trợ đã được tạo thành công!</string>
+    <string name="chat_started">Đã kết nối với nhân viên hỗ trợ</string>
+    <string name="error_empty_subject">Vui lòng nhập tiêu đề</string>
+    <string name="error_empty_message">Vui lòng nhập nội dung tin nhắn</string>
+    <string name="error_network">Lỗi kết nối mạng. Vui lòng thử lại.</string>
+    <string name="chat_unavailable">Chat hiện không khả dụng. Vui lòng thử lại sau.</string>
+
+    <!-- Quick Actions -->
+    <string name="call_support">Gọi Hỗ Trợ</string>
+    <string name="email_us">Gửi Email</string>
+    <string name="find_store">Tìm Cửa Hàng</string>
+    <string name="user_guide">Hướng Dẫn Sử Dụng</string>
+
+    <!-- Help Screen -->
+    <string name="help">Trợ Giúp</string>
+    <string name="help_subtitle">Hướng dẫn và trợ giúp sử dụng ứng dụng</string>
+    <string name="getting_started">Bắt Đầu Sử Dụng</string>
+    <string name="troubleshooting">Khắc Phục Sự Cố</string>
+    <string name="account_help">Trợ Giúp Tài Khoản</string>
+    <string name="services_help">Dịch Vụ &amp; Giá Cả</string>
+    <string name="billing_payments">Thanh Toán &amp; Hóa Đơn</string>
+    <string name="app_features">Tính Năng Ứng Dụng</string>
+    <string name="safety_security">An Toàn &amp; Bảo Mật</string>
+    <string name="feedback_report">Phản Hồi &amp; Báo Cáo</string>
+
+    <!-- Getting Started -->
+    <string name="how_to_create_account">Cách tạo tài khoản</string>
+    <string name="how_to_login">Cách đăng nhập</string>
+    <string name="first_order_guide">Hướng dẫn đặt đơn đầu tiên</string>
+    <string name="app_navigation">Điều hướng trong ứng dụng</string>
+
+    <!-- Troubleshooting -->
+    <string name="app_crashes">Ứng dụng bị crash</string>
+    <string name="login_issues">Vấn đề đăng nhập</string>
+    <string name="order_issues">Vấn đề với đơn hàng</string>
+    <string name="payment_issues">Vấn đề thanh toán</string>
+    <string name="location_services">Dịch vụ định vị</string>
+
+    <!-- Account Help -->
+    <string name="update_profile">Cập nhật thông tin cá nhân</string>
+    <string name="membership_benefits">Quyền lợi thành viên</string>
+    <string name="account_security">Bảo mật tài khoản</string>
+
+    <!-- Services & Pricing -->
+    <string name="service_types">Các loại dịch vụ</string>
+    <string name="pricing_tiers">Bảng giá và gói dịch vụ</string>
+    <string name="delivery_areas">Khu vực giao nhận</string>
+
+    <!-- App Features -->
+    <string name="notification_settings">Cài đặt thông báo</string>
+    <string name="favorite_services">Dịch vụ yêu thích</string>
+    <string name="order_history">Lịch sử đơn hàng</string>
+
+    <!-- Help Categories -->
+    <string name="video_tutorials">Video Hướng Dẫn</string>
+    <string name="step_by_step_guides">Hướng Dẫn Bước Một</string>
+    <string name="faqs">Câu Hỏi Thường Gặp</string>
+    <string name="contact_support_team">Liên Hệ Đội Ngũ Hỗ Trợ</string>
+    <string name="help_categories">Danh Mục Trợ Giúp</string>
+
+    <!-- Help Messages -->
+    <string name="help_description">Tìm kiếm trợ giúp nhanh chóng với các danh mục bên dưới</string>
+    <string name="search_help">Tìm kiếm trợ giúp...</string>
+    <string name="popular_topics">Chủ đề phổ biến</string>
+    <string name="recently_viewed">Đã xem gần đây</string>
+    <string name="help_center">Trung Tâm Trợ Giúp</string>
+    <string name="need_more_help">Cần thêm trợ giúp?</string>
+    <string name="contact_us_anytime">Liên hệ chúng tôi bất cứ lúc nào</string>
 </resources>

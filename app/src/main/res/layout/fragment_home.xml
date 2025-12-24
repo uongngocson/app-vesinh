@@ -23,7 +23,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/nunito_semi_bold"
-                android:text="Discover"
+                android:text="Khám phá"
                 android:textColor="@color/dark_late_gray"
                 android:textSize="24sp" />
 
@@ -35,7 +35,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="-5dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Laundry Service"
+                android:text="Dịch vụ giặt ủi"
                 android:textColor="@color/dark_late_gray"
                 android:textSize="24sp" />
 
@@ -58,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:iconifiedByDefault="false"
                     android:queryBackground="@android:color/transparent"
-                    android:queryHint="Search Services"
+                    android:queryHint="Tìm dịch vụ"
                     android:searchIcon="@drawable/ic_search_services"
                     android:theme="@style/SearchView"
                     app:queryBackground="@android:color/transparent" />
@@ -77,13 +77,207 @@
                 android:src="@drawable/ic_filter"
                 tools:ignore="ContentDescription" />
 
+            <!-- Promotional Banner -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/promo_banner"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/search"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_item_rounded"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/promo_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="@string/promo_banner_title"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/promo_title"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/nunito_semi_bold"
+                        android:text="@string/promo_banner_desc"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/btn_promo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/bg_search"
+                        android:fontFamily="@font/nunito_bold"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:text="@string/grab_now"
+                        android:textColor="@color/dark_late_gray"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Quick Access Section -->
+            <TextView
+                android:id="@+id/quick_access_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/promo_banner"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="@string/quick_access"
+                android:textColor="@color/dark_late_gray"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/quick_access_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quick_access_title"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_search"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_notifications"
+                        android:tint="@color/dark_late_gray"
+                        tools:ignore="ContentDescription,UseAppTint" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="@string/track_order"
+                        android:textAlignment="center"
+                        android:textColor="@color/dark_late_gray"
+                        android:textSize="11sp"
+                        tools:ignore="SmallSp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_search"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_search_services"
+                        android:tint="@color/dark_late_gray"
+                        tools:ignore="ContentDescription,UseAppTint" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="@string/promo_codes"
+                        android:textAlignment="center"
+                        android:textColor="@color/dark_late_gray"
+                        android:textSize="11sp"
+                        tools:ignore="SmallSp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_search"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_setting"
+                        android:tint="@color/dark_late_gray"
+                        tools:ignore="ContentDescription,UseAppTint" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="@string/schedule"
+                        android:textAlignment="center"
+                        android:textColor="@color/dark_late_gray"
+                        android:textSize="11sp"
+                        tools:ignore="SmallSp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_search"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ic_user"
+                        android:tint="@color/dark_late_gray"
+                        tools:ignore="ContentDescription,UseAppTint" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="@string/membership_card"
+                        android:textAlignment="center"
+                        android:textColor="@color/dark_late_gray"
+                        android:textSize="11sp"
+                        tools:ignore="SmallSp" />
+                </LinearLayout>
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/choose_services"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/search"
+                android:layout_below="@+id/quick_access_container"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="25dp"
                 android:fontFamily="@font/nunito_black"
                 android:text="@string/choose_services"
                 android:textColor="@color/dark_late_gray"
@@ -129,6 +323,8 @@
                         android:textSize="11sp"
                         tools:ignore="SmallSp" />
                 </RelativeLayout>
+
+
 
                 <RelativeLayout
                     android:layout_width="70dp"
@@ -217,10 +413,349 @@
                 </RelativeLayout>
             </LinearLayout>
 
+            <!-- Special Offers Section -->
+            <LinearLayout
+                android:id="@+id/special_offers_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/container_choose_service"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nunito_black"
+                    android:text="@string/special_offers"
+                    android:textColor="@color/dark_late_gray"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/see_all"
+                    android:textColor="@color/dark_late_gray"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/special_offers_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/special_offers_header"
+                android:layout_marginTop="15dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Offer Card 1 -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="280dp"
+                        android:layout_height="120dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="3dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_item_rounded"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/flash_sale_badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_search"
+                                android:fontFamily="@font/nunito_black"
+                                android:paddingStart="10dp"
+                                android:paddingTop="4dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="4dp"
+                                android:text="@string/flash_sale"
+                                android:textColor="@color/dark_late_gray"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/discount_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/flash_sale_badge"
+                                android:layout_marginTop="12dp"
+                                android:fontFamily="@font/nunito_black"
+                                android:text="@string/discount_up_to"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBaseline="@+id/discount_text"
+                                android:layout_marginStart="6dp"
+                                android:layout_toEndOf="@+id/discount_text"
+                                android:fontFamily="@font/nunito_black"
+                                android:text="50%"
+                                android:textColor="@color/white"
+                                android:textSize="28sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:fontFamily="@font/nunito_semi_bold"
+                                android:text="@string/today_only"
+                                android:textColor="@color/white"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Offer Card 2 -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="280dp"
+                        android:layout_height="120dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="3dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_search"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:id="@+id/express_icon"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/ic_washing_machine"
+                                android:tint="@color/dark_late_gray"
+                                tools:ignore="ContentDescription,UseAppTint" />
+
+                            <TextView
+                                android:id="@+id/express_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_toEndOf="@+id/express_icon"
+                                android:fontFamily="@font/nunito_black"
+                                android:text="@string/express_service"
+                                android:textColor="@color/dark_late_gray"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/express_title"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_toEndOf="@+id/express_icon"
+                                android:fontFamily="@font/nunito_semi_bold"
+                                android:text="@string/ready_in_hours"
+                                android:textColor="@color/dark_late_gray"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@drawable/bg_item_rounded"
+                                android:fontFamily="@font/nunito_bold"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:text="@string/grab_now"
+                                android:textColor="@color/white"
+                                android:textSize="11sp" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Offer Card 3 -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="280dp"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_search"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_black"
+                                    android:text="@string/premium_care"
+                                    android:textColor="@color/dark_late_gray"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:fontFamily="@font/nunito_semi_bold"
+                                    android:text="@string/best_quality"
+                                    android:textColor="@color/dark_late_gray"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_shirt"
+                                android:tint="@color/dark_late_gray"
+                                tools:ignore="ContentDescription,UseAppTint" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Popular Services Section -->
+            <TextView
+                android:id="@+id/popular_services_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/special_offers_scroll"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="@string/popular_services"
+                android:textColor="@color/dark_late_gray"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/popular_services_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/popular_services_title"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_item_rounded"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:id="@+id/eco_icon"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_iron"
+                            android:tint="@color/white"
+                            tools:ignore="ContentDescription,UseAppTint" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/eco_icon"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="@string/eco_friendly"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            tools:ignore="SmallSp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/nunito_semi_bold"
+                            android:text="@string/green_cleaning"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="9sp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_search"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:id="@+id/premium_icon"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_more"
+                            android:tint="@color/dark_late_gray"
+                            tools:ignore="ContentDescription,UseAppTint" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/premium_icon"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="@string/premium_care"
+                            android:textAlignment="center"
+                            android:textColor="@color/dark_late_gray"
+                            android:textSize="11sp"
+                            tools:ignore="SmallSp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/nunito_semi_bold"
+                            android:text="@string/best_quality"
+                            android:textAlignment="center"
+                            android:textColor="@color/dark_late_gray"
+                            android:textSize="9sp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/container_choose_service"
+                android:layout_below="@+id/popular_services_container"
                 android:background="@drawable/bg_half_rounded2">
 
                 <TextView

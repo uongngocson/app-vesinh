@@ -15,15 +15,22 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.project.laundryappui.api.AuthRepository;
+import com.project.laundryappui.auth.ChangePasswordActivity;
 import com.project.laundryappui.auth.LoginActivity;
 import com.project.laundryappui.menu.home.HomeFragment;
 import com.project.laundryappui.menu.message.MessageFragment;
 import com.project.laundryappui.menu.notification.NotificationFragment;
 import com.project.laundryappui.menu.search.SearchFragment;
+import com.project.laundryappui.help.HelpActivity;
+import com.project.laundryappui.profile.MyAccountActivity;
+import com.project.laundryappui.support.SupportActivity;
 import com.project.laundryappui.utils.SessionManager;
 
 import java.util.Objects;
@@ -31,13 +38,15 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
     private SessionManager sessionManager;
+    private AuthRepository authRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        // Khởi tạo SessionManager
+        // Khởi tạo SessionManager và AuthRepository
         sessionManager = new SessionManager(this);
+        authRepository = new AuthRepository(this);
         
         // Kiểm tra nếu chưa đăng nhập thì chuyển về LoginActivity
         if (!sessionManager.isLoggedIn()) {
@@ -116,19 +125,50 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private void initComponentsNavHeader(){
         NavigationView navigationView = findViewById(R.id.nav_view);
 //        navigationView.setItemIconTintList(null); //disable tint on each icon to use color icon svg
+        
+        // Get và update nav header với thông tin user
+        View headerView = navigationView.getHeaderView(0);
+        TextView tvNameHeader = headerView.findViewById(R.id.atv_name_header);
+        TextView tvEmailHeader = headerView.findViewById(R.id.tv_email_header);
+        
+        // Lấy thông tin từ SessionManager
+        String userName = sessionManager.getUserName();
+        String userEmail = sessionManager.getUserEmail();
+        
+        // Set text, nếu không có thì dùng default
+        if (userName != null && !userName.isEmpty()) {
+            tvNameHeader.setText(userName);
+        } else {
+            tvNameHeader.setText("User");
+        }
+        
+        if (userEmail != null && !userEmail.isEmpty()) {
+            tvEmailHeader.setText(userEmail);
+        } else {
+            tvEmailHeader.setText("user@example.com");
+        }
+        
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.nav_my_account) {
-                    Pesan("My Account");
+                    // Navigate to My Account
+                    Intent intent = new Intent(MainActivity.this, MyAccountActivity.class);
+                    startActivity(intent);
                 } else if (itemId == R.id.nav_support) {
-                    Pesan("Support");
+                    // Navigate to Support
+                    Intent intent = new Intent(MainActivity.this, SupportActivity.class);
+                    startActivity(intent);
                 } else if (itemId == R.id.nav_setting) {
-                    Pesan("Setting");
+                    // Navigate to Change Password
+                    Intent intent = new Intent(MainActivity.this, ChangePasswordActivity.class);
+                    startActivity(intent);
                 } else if (itemId == R.id.nav_help) {
-                    Pesan("Help");
+                    // Navigate to Help
+                    Intent intent = new Intent(MainActivity.this, HelpActivity.class);
+                    startActivity(intent);
                 } else if (itemId == R.id.nav_logout) {
                     showLogoutConfirmation();
                     return true;
@@ -183,14 +223,24 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
     /**
-     * Thực hiện đăng xuất
+     * Thực hiện đăng xuất với API
      */
     private void performLogout() {
-        // Xóa session
-        sessionManager.logout();
-        
-        // Chuyển về màn hình đăng nhập
-        navigateToLogin();
+        // Hiển thị loading (optional - có thể dùng ProgressDialog)
+        authRepository.logout(new AuthRepository.AuthCallback<String>() {
+            @Override
+            public void onSuccess(String message) {
+                // Đã clear local data trong repository
+                // Chuyển về màn hình đăng nhập
+                navigateToLogin();
+            }
+
+            @Override
+            public void onError(String errorMessage) {
+                // Dù có lỗi cũng vẫn logout và về màn hình đăng nhập
+                navigateToLogin();
+            }
+        });
     }
 
     /**

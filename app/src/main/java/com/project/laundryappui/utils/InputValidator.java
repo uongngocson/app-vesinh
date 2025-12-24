@@ -92,4 +92,3 @@ public class InputValidator {
         return text == null || text.trim().isEmpty();
     }
 }
-

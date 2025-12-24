@@ -1,0 +1,400 @@
+{
+  "services": [
+    {
+      "id": "IRONING",
+      "name": "Dịch vụ ủi đồ",
+      "name_key": "ironing_service",
+      "description": "Ủi đồ chuyên nghiệp, phẳng phiu, thơm tho",
+      "description_key": "ironing_desc",
+      "icon": "ic_iron",
+      "estimated_time": "24 giờ",
+      "estimated_time_key": "hours_24",
+      "express_time": "Nhanh 3h",
+      "express_time_key": "express_3h",
+      "features": [
+        {
+          "icon": "ic_start",
+          "title": "Chất lượng cao",
+          "title_key": "feature_quality"
+        },
+        {
+          "icon": "ic_security",
+          "title": "An toàn cho vải",
+          "title_key": "feature_safe"
+        },
+        {
+          "icon": "ic_favorite",
+          "title": "Thơm lâu",
+          "title_key": "feature_fragrant"
+        }
+      ],
+      "items": [
+        {
+          "id": "ironing_shirt",
+          "name": "Áo sơ mi",
+          "name_key": "shirt",
+          "price": 15000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "24 giờ",
+          "estimated_time_key": "hours_24",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        },
+        {
+          "id": "ironing_tshirt",
+          "name": "Áo thun",
+          "name_key": "t_shirt",
+          "price": 10000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "24 giờ",
+          "estimated_time_key": "hours_24",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        },
+        {
+          "id": "ironing_pants",
+          "name": "Quần dài",
+          "name_key": "pants",
+          "price": 15000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "24 giờ",
+          "estimated_time_key": "hours_24",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        },
+        {
+          "id": "ironing_jeans",
+          "name": "Quần jean",
+          "name_key": "jeans",
+          "price": 18000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "24 giờ",
+          "estimated_time_key": "hours_24",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        },
+        {
+          "id": "ironing_dress",
+          "name": "Váy/Đầm",
+          "name_key": "dress",
+          "price": 20000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "24 giờ",
+          "estimated_time_key": "hours_24",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        },
+        {
+          "id": "ironing_suit",
+          "name": "Vest/Com lê",
+          "name_key": "suit",
+          "price": 35000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "24 giờ",
+          "estimated_time_key": "hours_24",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        },
+        {
+          "id": "ironing_jacket",
+          "name": "Áo khoác",
+          "name_key": "jacket",
+          "price": 25000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "24 giờ",
+          "estimated_time_key": "hours_24",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        },
+        {
+          "id": "ironing_skirt",
+          "name": "Chân váy",
+          "name_key": "skirt",
+          "price": 15000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "24 giờ",
+          "estimated_time_key": "hours_24",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        }
+      ]
+    },
+    {
+      "id": "WASH_IRON",
+      "name": "Dịch vụ giặt và ủi",
+      "name_key": "wash_iron_service",
+      "description": "Giặt sạch và ủi phẳng, tiết kiệm thời gian",
+      "description_key": "wash_iron_desc",
+      "icon": "ic_washing_machine",
+      "estimated_time": "48 giờ",
+      "estimated_time_key": "hours_48",
+      "express_time": "Nhanh 3h",
+      "express_time_key": "express_3h",
+      "features": [
+        {
+          "icon": "ic_start",
+          "title": "Chất lượng cao",
+          "title_key": "feature_quality"
+        },
+        {
+          "icon": "ic_security",
+          "title": "An toàn cho vải",
+          "title_key": "feature_safe"
+        },
+        {
+          "icon": "ic_favorite",
+          "title": "Thơm lâu",
+          "title_key": "feature_fragrant"
+        }
+      ],
+      "items": [
+        {
+          "id": "wash_iron_shirt",
+          "name": "Áo sơ mi",
+          "name_key": "shirt",
+          "price": 25000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_washing_machine",
+          "category": "clothing"
+        },
+        {
+          "id": "wash_iron_tshirt",
+          "name": "Áo thun",
+          "name_key": "t_shirt",
+          "price": 20000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_washing_machine",
+          "category": "clothing"
+        },
+        {
+          "id": "wash_iron_pants",
+          "name": "Quần dài",
+          "name_key": "pants",
+          "price": 25000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_washing_machine",
+          "category": "clothing"
+        },
+        {
+          "id": "wash_iron_jeans",
+          "name": "Quần jean",
+          "name_key": "jeans",
+          "price": 30000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_washing_machine",
+          "category": "clothing"
+        },
+        {
+          "id": "wash_iron_dress",
+          "name": "Váy/Đầm",
+          "name_key": "dress",
+          "price": 35000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_washing_machine",
+          "category": "clothing"
+        },
+        {
+          "id": "wash_iron_suit",
+          "name": "Vest/Com lê",
+          "name_key": "suit",
+          "price": 60000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_washing_machine",
+          "category": "clothing"
+        },
+        {
+          "id": "wash_iron_jacket",
+          "name": "Áo khoác",
+          "name_key": "jacket",
+          "price": 45000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_washing_machine",
+          "category": "clothing"
+        },
+        {
+          "id": "wash_iron_sweater",
+          "name": "Áo len",
+          "name_key": "sweater",
+          "price": 40000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_washing_machine",
+          "category": "clothing"
+        },
+        {
+          "id": "wash_iron_blanket",
+          "name": "Chăn/Mền",
+          "name_key": "blanket",
+          "price": 80000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_washing_machine",
+          "category": "bedding"
+        }
+      ]
+    },
+    {
+      "id": "DRY_CLEAN",
+      "name": "Dịch vụ giặt khô",
+      "name_key": "dry_clean_service",
+      "description": "Giặt khô cao cấp cho đồ sang trọng",
+      "description_key": "dry_clean_desc",
+      "icon": "ic_shirt",
+      "estimated_time": "72 giờ",
+      "estimated_time_key": "hours_72",
+      "express_time": "Nhanh 3h",
+      "express_time_key": "express_3h",
+      "features": [
+        {
+          "icon": "ic_start",
+          "title": "Dịch vụ cao cấp",
+          "title_key": "feature_premium"
+        },
+        {
+          "icon": "ic_security",
+          "title": "An toàn cho vải",
+          "title_key": "feature_safe"
+        },
+        {
+          "icon": "ic_favorite",
+          "title": "Thơm lâu",
+          "title_key": "feature_fragrant"
+        }
+      ],
+      "items": [
+        {
+          "id": "dry_clean_shirt",
+          "name": "Áo sơ mi",
+          "name_key": "shirt",
+          "price": 40000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "72 giờ",
+          "estimated_time_key": "hours_72",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        },
+        {
+          "id": "dry_clean_pants",
+          "name": "Quần dài",
+          "name_key": "pants",
+          "price": 45000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "72 giờ",
+          "estimated_time_key": "hours_72",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        },
+        {
+          "id": "dry_clean_dress",
+          "name": "Váy/Đầm",
+          "name_key": "dress",
+          "price": 60000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "72 giờ",
+          "estimated_time_key": "hours_72",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        },
+        {
+          "id": "dry_clean_suit",
+          "name": "Vest/Com lê",
+          "name_key": "suit",
+          "price": 100000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "72 giờ",
+          "estimated_time_key": "hours_72",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        },
+        {
+          "id": "dry_clean_jacket",
+          "name": "Áo khoác",
+          "name_key": "jacket",
+          "price": 80000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "72 giờ",
+          "estimated_time_key": "hours_72",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        },
+        {
+          "id": "dry_clean_sweater",
+          "name": "Áo len cao cấp",
+          "name_key": "sweater",
+          "price": 70000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "72 giờ",
+          "estimated_time_key": "hours_72",
+          "icon": "ic_shirt",
+          "category": "clothing"
+        },
+        {
+          "id": "dry_clean_curtain",
+          "name": "Rèm cửa",
+          "name_key": "curtain",
+          "price": 150000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "72 giờ",
+          "estimated_time_key": "hours_72",
+          "icon": "ic_shirt",
+          "category": "home"
+        },
+        {
+          "id": "dry_clean_blanket",
+          "name": "Chăn/Mền cao cấp",
+          "name_key": "blanket",
+          "price": 200000,
+          "unit": "/món",
+          "unit_key": "per_item",
+          "estimated_time": "72 giờ",
+          "estimated_time_key": "hours_72",
+          "icon": "ic_shirt",
+          "category": "bedding"
+        }
+      ]
+    }
+  ],
+  "version": "1.0",
+  "last_updated": "2024-12-24"
+}
+

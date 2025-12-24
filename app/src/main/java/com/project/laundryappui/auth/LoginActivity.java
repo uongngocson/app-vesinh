@@ -16,6 +16,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.project.laundryappui.MainActivity;
 import com.project.laundryappui.R;
+import com.project.laundryappui.api.AuthRepository;
+import com.project.laundryappui.api.models.AuthResponse;
 import com.project.laundryappui.utils.InputValidator;
 import com.project.laundryappui.utils.SessionManager;
 
@@ -26,12 +28,11 @@ import java.util.Objects;
  * 
  * Chức năng:
  * - Validate input (email, password)
- * - Xử lý đăng nhập (Demo: email = demo@laundry.com, password = 123456)
- * - Lưu session khi đăng nhập thành công
+ * - Xử lý đăng nhập với API backend (NestJS)
+ * - Lưu session và token khi đăng nhập thành công
  * - Navigate đến MainActivity sau khi đăng nhập
  * 
  * Dễ dàng mở rộng:
- * - Tích hợp API đăng nhập thật
  * - Thêm đăng nhập bằng Google, Facebook
  * - Thêm chức năng Remember Me
  * - Thêm Biometric Authentication
@@ -44,19 +45,19 @@ public class LoginActivity extends AppCompatActivity {
     private MaterialButton btnLogin;
     private TextView tvForgotPassword, tvSignUp;
     private ProgressBar progressBar;
+    private View loadingOverlay;
+    private View cardProgress;
 
-    // Utils
+    // Repository & Utils
+    private AuthRepository authRepository;
     private SessionManager sessionManager;
-
-    // Demo Account (Thay bằng API call thực tế khi production)
-    private static final String DEMO_EMAIL = "demo@laundry.com";
-    private static final String DEMO_PASSWORD = "123456";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        // Khởi tạo SessionManager
+        // Khởi tạo Repository và SessionManager
+        authRepository = new AuthRepository(this);
         sessionManager = new SessionManager(this);
         
         // Kiểm tra nếu đã đăng nhập thì chuyển thẳng đến MainActivity
@@ -84,6 +85,8 @@ public class LoginActivity extends AppCompatActivity {
         tvForgotPassword = findViewById(R.id.tvForgotPassword);
         tvSignUp = findViewById(R.id.tvSignUp);
         progressBar = findViewById(R.id.progressBar);
+        loadingOverlay = findViewById(R.id.loadingOverlay);
+        cardProgress = findViewById(R.id.cardProgress);
     }
 
     /**
@@ -133,10 +136,8 @@ public class LoginActivity extends AppCompatActivity {
         // Hiển thị loading
         showLoading(true);
 
-        // Simulate API call với delay (Thay bằng API call thực tế)
-        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            performLogin(email, password);
-        }, 1500);
+        // Gọi API đăng nhập
+        performLogin(email, password);
     }
 
     /**
@@ -170,75 +171,57 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     /**
-     * Thực hiện đăng nhập
-     * TODO: Thay bằng API call thực tế khi production
+     * Thực hiện đăng nhập với API backend
      * @param email Email
      * @param password Password
      */
     private void performLogin(String email, String password) {
-        // Demo: Kiểm tra với account demo
-        // Thay bằng API call thực tế: apiService.login(email, password)
-        if (email.equals(DEMO_EMAIL) && password.equals(DEMO_PASSWORD)) {
-            // Đăng nhập thành công
-            onLoginSuccess(email, "Demo User");
-        } else {
-            // Đăng nhập thất bại
-            onLoginFailed();
-        }
+        authRepository.login(email, password, new AuthRepository.AuthCallback<AuthResponse>() {
+            @Override
+            public void onSuccess(AuthResponse data) {
+                // Đã lưu token và session trong repository
+                showLoading(false);
+                
+                // Hiển thị thông báo
+                Toast.makeText(LoginActivity.this, 
+                        getString(R.string.login_success), 
+                        Toast.LENGTH_SHORT).show();
+
+                // Chuyển đến MainActivity
+                navigateToMain();
+            }
+
+            @Override
+            public void onError(String errorMessage) {
+                showLoading(false);
+                Toast.makeText(LoginActivity.this, errorMessage, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     /**
-     * Callback khi đăng nhập thành công
-     * @param email Email người dùng
-     * @param userName Tên người dùng
-     */
-    private void onLoginSuccess(String email, String userName) {
-        showLoading(false);
-
-        // Lưu session
-        sessionManager.createLoginSession(email, userName);
-
-        // Hiển thị thông báo
-        Toast.makeText(this, getString(R.string.login_success), Toast.LENGTH_SHORT).show();
-
-        // Chuyển đến MainActivity
-        navigateToMain();
-    }
-
-    /**
-     * Callback khi đăng nhập thất bại
-     */
-    private void onLoginFailed() {
-        showLoading(false);
-        Toast.makeText(this, getString(R.string.login_failed), Toast.LENGTH_LONG).show();
-    }
-
-    /**
-     * Xử lý quên mật khẩu
-     * TODO: Implement màn hình forgot password
+     * Xử lý chuyển đến màn hình quên mật khẩu
      */
     private void handleForgotPassword() {
-        Toast.makeText(this, "Tính năng đang được phát triển", Toast.LENGTH_SHORT).show();
-        // Intent intent = new Intent(this, ForgotPasswordActivity.class);
-        // startActivity(intent);
+        Intent intent = new Intent(this, ForgotPasswordActivity.class);
+        startActivity(intent);
     }
 
     /**
-     * Xử lý đăng ký
-     * TODO: Implement màn hình sign up
+     * Xử lý chuyển đến màn hình đăng ký
      */
     private void handleSignUp() {
-        Toast.makeText(this, "Tính năng đang được phát triển", Toast.LENGTH_SHORT).show();
-        // Intent intent = new Intent(this, SignUpActivity.class);
-        // startActivity(intent);
+        Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
     }
 
     /**
-     * Hiển thị/ẩn loading
+     * Hiển thị/ẩn loading với overlay đẹp
      * @param show true để hiển thị, false để ẩn
      */
     private void showLoading(boolean show) {
-        progressBar.setVisibility(show ? View.VISIBLE : View.GONE);
+        loadingOverlay.setVisibility(show ? View.VISIBLE : View.GONE);
+        cardProgress.setVisibility(show ? View.VISIBLE : View.GONE);
         btnLogin.setEnabled(!show);
         etEmail.setEnabled(!show);
         etPassword.setEnabled(!show);
