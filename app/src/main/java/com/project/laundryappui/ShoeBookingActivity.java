@@ -14,6 +14,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.project.laundryappui.api.OrdersRepository;
+import com.project.laundryappui.api.models.Address;
 import com.project.laundryappui.api.models.CleaningBookingRequest;
 import com.project.laundryappui.api.models.Order;
 import com.project.laundryappui.utils.InputValidator;
@@ -37,9 +38,13 @@ public class ShoeBookingActivity extends AppCompatActivity {
 
     // UI Components
     private TextInputLayout tilCustomerName, tilCustomerPhone, tilCustomerEmail,
-                           tilItemDescription, tilServiceNotes, tilNotes;
+                           tilItemDescription, tilServiceNotes, tilNotes,
+                           tilShippingStreet, tilShippingDistrict, tilShippingCity,
+                           tilBillingStreet, tilBillingDistrict, tilBillingCity;
     private TextInputEditText etCustomerName, etCustomerPhone, etCustomerEmail,
-                             etItemDescription, etServiceNotes, etNotes;
+                             etItemDescription, etServiceNotes, etNotes,
+                             etShippingStreet, etShippingDistrict, etShippingCity,
+                             etBillingStreet, etBillingDistrict, etBillingCity;
     private MaterialButton btnSubmit;
     private View loadingOverlay;
     private View cardProgress;
@@ -74,6 +79,16 @@ public class ShoeBookingActivity extends AppCompatActivity {
         tilServiceNotes = findViewById(R.id.tilServiceNotes);
         tilNotes = findViewById(R.id.tilNotes);
 
+        // Shipping Address Layouts
+        tilShippingStreet = findViewById(R.id.tilShippingStreet);
+        tilShippingDistrict = findViewById(R.id.tilShippingDistrict);
+        tilShippingCity = findViewById(R.id.tilShippingCity);
+
+        // Billing Address Layouts
+        tilBillingStreet = findViewById(R.id.tilBillingStreet);
+        tilBillingDistrict = findViewById(R.id.tilBillingDistrict);
+        tilBillingCity = findViewById(R.id.tilBillingCity);
+
         // Text Input EditTexts
         etCustomerName = findViewById(R.id.etCustomerName);
         etCustomerPhone = findViewById(R.id.etCustomerPhone);
@@ -81,6 +96,16 @@ public class ShoeBookingActivity extends AppCompatActivity {
         etItemDescription = findViewById(R.id.etItemDescription);
         etServiceNotes = findViewById(R.id.etServiceNotes);
         etNotes = findViewById(R.id.etNotes);
+
+        // Shipping Address EditTexts
+        etShippingStreet = findViewById(R.id.etShippingStreet);
+        etShippingDistrict = findViewById(R.id.etShippingDistrict);
+        etShippingCity = findViewById(R.id.etShippingCity);
+
+        // Billing Address EditTexts
+        etBillingStreet = findViewById(R.id.etBillingStreet);
+        etBillingDistrict = findViewById(R.id.etBillingDistrict);
+        etBillingCity = findViewById(R.id.etBillingCity);
 
         // Buttons
         btnSubmit = findViewById(R.id.btnSubmit);
@@ -125,6 +150,19 @@ public class ShoeBookingActivity extends AppCompatActivity {
         etItemDescription.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus) tilItemDescription.setError(null);
         });
+
+        // Shipping Address listeners
+        etShippingStreet.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) tilShippingStreet.setError(null);
+        });
+
+        etShippingDistrict.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) tilShippingDistrict.setError(null);
+        });
+
+        etShippingCity.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) tilShippingCity.setError(null);
+        });
     }
 
     /**
@@ -139,18 +177,25 @@ public class ShoeBookingActivity extends AppCompatActivity {
         String serviceNotes = etServiceNotes.getText().toString().trim();
         String notes = etNotes.getText().toString().trim();
 
+        // Lấy địa chỉ shipping
+        String shippingStreet = etShippingStreet.getText().toString().trim();
+        String shippingDistrict = etShippingDistrict.getText().toString().trim();
+        String shippingCity = etShippingCity.getText().toString().trim();
+
         // Clear errors cũ
         clearAllErrors();
 
         // Validate dữ liệu
-        if (!validateForm(customerName, customerPhone, customerEmail, itemDescription)) {
+        if (!validateForm(customerName, customerPhone, customerEmail, itemDescription,
+                         shippingStreet, shippingDistrict, shippingCity)) {
             return;
         }
 
         // Tạo request object
         CleaningBookingRequest request = createCleaningBookingRequest(
             customerName, customerPhone, customerEmail,
-            itemDescription, serviceNotes, notes
+            itemDescription, serviceNotes, notes,
+            shippingStreet, shippingDistrict, shippingCity
         );
 
         // Gọi API
@@ -161,7 +206,8 @@ public class ShoeBookingActivity extends AppCompatActivity {
      * Validate toàn bộ form
      */
     private boolean validateForm(String customerName, String customerPhone,
-                               String customerEmail, String itemDescription) {
+                               String customerEmail, String itemDescription,
+                               String shippingStreet, String shippingDistrict, String shippingCity) {
         boolean isValid = true;
 
         // Validate customer name
@@ -197,6 +243,22 @@ public class ShoeBookingActivity extends AppCompatActivity {
             isValid = false;
         }
 
+        // Validate shipping address
+        if (InputValidator.isEmpty(shippingStreet)) {
+            tilShippingStreet.setError("Vui lòng nhập số nhà, tên đường");
+            isValid = false;
+        }
+
+        if (InputValidator.isEmpty(shippingDistrict)) {
+            tilShippingDistrict.setError("Vui lòng nhập quận/huyện");
+            isValid = false;
+        }
+
+        if (InputValidator.isEmpty(shippingCity)) {
+            tilShippingCity.setError("Vui lòng nhập tỉnh/thành phố");
+            isValid = false;
+        }
+
         return isValid;
     }
 
@@ -210,6 +272,12 @@ public class ShoeBookingActivity extends AppCompatActivity {
         tilItemDescription.setError(null);
         tilServiceNotes.setError(null);
         tilNotes.setError(null);
+        tilShippingStreet.setError(null);
+        tilShippingDistrict.setError(null);
+        tilShippingCity.setError(null);
+        tilBillingStreet.setError(null);
+        tilBillingDistrict.setError(null);
+        tilBillingCity.setError(null);
     }
 
     /**
@@ -217,7 +285,8 @@ public class ShoeBookingActivity extends AppCompatActivity {
      */
     private CleaningBookingRequest createCleaningBookingRequest(
             String customerName, String customerPhone, String customerEmail,
-            String itemDescription, String serviceNotes, String notes) {
+            String itemDescription, String serviceNotes, String notes,
+            String shippingStreet, String shippingDistrict, String shippingCity) {
 
         CleaningBookingRequest request = new CleaningBookingRequest();
         request.setCustomerName(customerName);
@@ -226,6 +295,26 @@ public class ShoeBookingActivity extends AppCompatActivity {
         // Email optional
         if (!InputValidator.isEmpty(customerEmail)) {
             request.setCustomerEmail(customerEmail);
+        }
+
+        // Create shipping address
+        Address shippingAddress = new Address();
+        shippingAddress.setAddressLine1(shippingStreet);
+        shippingAddress.setDistrict(shippingDistrict);
+        shippingAddress.setCity(shippingCity);
+        request.setShippingAddress(shippingAddress);
+
+        // Create billing address (optional - copy from shipping if not filled)
+        String billingStreet = etBillingStreet.getText().toString().trim();
+        String billingDistrict = etBillingDistrict.getText().toString().trim();
+        String billingCity = etBillingCity.getText().toString().trim();
+
+        if (!InputValidator.isEmpty(billingStreet) && !InputValidator.isEmpty(billingDistrict) && !InputValidator.isEmpty(billingCity)) {
+            Address billingAddress = new Address();
+            billingAddress.setAddressLine1(billingStreet);
+            billingAddress.setDistrict(billingDistrict);
+            billingAddress.setCity(billingCity);
+            request.setBillingAddress(billingAddress);
         }
 
         request.setItemDescription(itemDescription);
@@ -250,7 +339,7 @@ public class ShoeBookingActivity extends AppCompatActivity {
         showLoading(true, "Đang tạo đơn hàng vệ sinh...");
 
         ordersRepository.createCleaningBooking(request, new OrdersRepository.OrdersCallback<Order>() {
-            @Override
+    @Override
             public void onSuccess(Order order) {
                 runOnUiThread(() -> {
                     showLoading(false, null);
