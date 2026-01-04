@@ -1,0 +1,25 @@
+{
+  "userId": "c1471001-5720-4a98-ac61-ac69eed85df2",
+  "storeId": "c0a490e0-354a-4a96-b814-bb3df51006e0",
+  "businessId": 23,
+  "type": "mixed",
+  "subtotal": 150000,
+  "totalAmount": 150000,
+  "customerName": "Nguyễn Văn Test",
+  "customerPhone": "0987654321",
+  "customerEmail": "test@example.com",
+  "notes": "Đơn hàng test import API",
+  "shippingAddress": {
+    "recipientName": "Nguyễn Văn Test",
+    "recipientPhone": "0987654321",
+    "addressLine1": "123 Đường ABC",
+    "ward": "Phường 1",
+    "district": "Quận 1",
+    "city": "TP.HCM",
+    "province": "TP.HCM"
+  },
+  "metadata": {
+    "source": "api_import_test",
+    "created_via": "curl_test"
+  }
+}

@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">Laundry App UI</string>
+    <string name="app_name">YIBO.VN APP</string>
     <string name="menu_home">Home</string>
     <string name="menu_search">Search</string>
     <string name="menu_notification">Notification</string>
     <string name="menu_message">Message</string>
+    <string name="menu_blog">Blog</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -15,6 +16,7 @@
     <string name="wash_and_iron"><![CDATA[Giặt + Ủi]]></string>
     <string name="ironing">Ủi đồ</string>
     <string name="choose_services">Chọn dịch vụ</string>
+    <string name="wash_shoes">Giặt Giày</string>
 
     <!-- Home Screen Additional -->
     <string name="promo_banner_title">Giảm 30% cho đơn đầu</string>
@@ -23,7 +25,81 @@
     <string name="track_order">Theo dõi</string>
     <string name="promo_codes">Mã giảm</string>
     <string name="schedule">Lịch hẹn</string>
-    <string name="membership_card">Thẻ VIP</string>
+    <string name="wash_shoes_online">Đánh giày online</string>
+    <string name="shoe_booking_title">Đặt dịch vụ đánh tại chỗ</string>
+    <string name="your_location">Vị trí của bạn</string>
+    <string name="enter_location">Chọn vị trí trên bản đồ...</string>
+    <string name="specific_address">Địa chỉ cụ thể</string>
+    <string name="enter_specific_address">Nhập số nhà, tên đường, khu vực...</string>
+    <string name="choose_shoe_service">Chọn loại giày</string>
+    <string name="sneakers_cleaning">Đánh giày sneaker</string>
+    <string name="sneakers_desc">Vệ sinh chuyên sâu, loại bỏ bụi bẩn và mùi hôi</string>
+    <string name="sneakers_price">50.000đ</string>
+    <string name="leather_cleaning">Đánh giày da</string>
+    <string name="leather_desc">Chăm sóc da chuyên nghiệp, bảo dưỡng và làm bóng</string>
+    <string name="leather_price">80.000đ</string>
+    <string name="high_heels_cleaning">Đánh giày cao gót</string>
+    <string name="high_heels_desc">Vệ sinh nhẹ nhàng, giữ form dáng và độ bền</string>
+    <string name="high_heels_price">60.000đ</string>
+    <string name="time_30_min">30 phút</string>
+    <string name="time_40_min">40 phút</string>
+    <string name="time_45_min">45 phút</string>
+    <string name="payment_method">Phương thức thanh toán</string>
+    <string name="cash_payment">Tiền mặt</string>
+    <string name="pay_when_done">Thanh toán khi hoàn thành</string>
+    <string name="ewallet_payment">Ví điện tử</string>
+    <string name="momo_zalopay">Momo, ZaloPay, ViettelPay</string>
+    <string name="getting_current_location">Đang lấy vị trí hiện tại...</string>
+    <string name="location_updated">Đã cập nhật vị trí hiện tại</string>
+    <string name="location_selected">Đã chọn vị trí:</string>
+    <string name="select_location_on_map">Chọn vị trí trên bản đồ</string>
+    <string name="getting_location_info">Đang lấy thông tin địa điểm...</string>
+    <string name="selected_location">Vị trí đã chọn</string>
+    <string name="tap_to_select_location">Chạm để chọn vị trí</string>
+    <string name="confirm_location">Xác nhận</string>
+    <string name="location_permission_required">Cần quyền truy cập vị trí để sử dụng bản đồ</string>
+    <string name="fallback_address">Học Viện Công Nghệ Bưu Chính Viễn Thông Cơ sở Quận 1: 11 Nguyễn Đình Chiểu, Phường Đa Kao, Quận 1</string>
+    <string name="finding_shoe_cleaner">Đang tìm thợ đánh giày...</string>
+    <string name="booking_successful">Đặt dịch vụ thành công!</string>
+    <string name="worker_assigned">Nhân viên sẽ đến trong 15 phút tại:</string>
+
+    <!-- Worker Found Screen -->
+    <string name="worker_found_title">Thợ đã tìm thấy</string>
+    <string name="worker_found_success">Đã tìm thấy thợ!</string>
+    <string name="worker_found_subtitle">Thợ đánh giày sẵn sàng phục vụ bạn</string>
+    <string name="verified_worker">Đã xác thực</string>
+    <string name="worker_statistics">Thống kê</string>
+    <string name="completed_orders">Đơn đã hoàn thành</string>
+    <string name="avg_response_time">Thời gian phản hồi TB</string>
+    <string name="distance_info">Khoảng cách &amp; Thời gian</string>
+    <string name="distance_from_you">Khoảng cách từ bạn</string>
+    <string name="estimated_arrival">Thời gian đến ước tính</string>
+    <string name="worker_location_map">Vị trí thợ trên bản đồ</string>
+    <string name="call_worker">Gọi điện</string>
+    <string name="message_worker">Nhắn tin</string>
+    <string name="total_price_label">Tổng tiền</string>
+    <string name="confirm_booking">Xác nhận đặt dịch vụ</string>
+
+    <!-- Booking Confirmed Screen -->
+    <string name="booking_confirmed_title">Xác nhận đơn hàng</string>
+    <string name="booking_confirmed_success">Đặt dịch vụ thành công!</string>
+    <string name="booking_confirmed_subtitle">Đơn hàng của bạn đã được xác nhận và thợ sẽ đến trong thời gian sớm nhất</string>
+    <string name="order_information">Thông tin đơn hàng</string>
+    <string name="order_id">Mã đơn hàng</string>
+    <string name="order_time">Thời gian đặt</string>
+    <string name="worker_information">Thông tin thợ</string>
+    <string name="service_information">Thông tin dịch vụ</string>
+    <string name="estimated_time_label">Thời gian ước tính</string>
+    <string name="delivery_address">Địa chỉ nhận dịch vụ</string>
+    <string name="payment_information">Thông tin thanh toán</string>
+    <string name="total_amount">Tổng tiền</string>
+    <string name="estimated_arrival_time">Thời gian đến ước tính</string>
+    <string name="back_to_home">Về trang chủ</string>
+
+    <string name="enable_gps_title">Bật GPS</string>
+    <string name="enable_gps_message">GPS chưa được bật. Bạn có muốn bật GPS để định vị chính xác hơn?</string>
+    <string name="enable_gps_positive">Bật GPS</string>
+    <string name="enable_gps_negative">Không</string>
     <string name="special_offers">Ưu đãi đặc biệt</string>
     <string name="flash_sale">Flash Sale</string>
     <string name="discount_up_to">Giảm đến</string>
@@ -59,6 +135,8 @@
     <string name="wash_iron_desc">Giặt sạch và ủi phẳng, tiết kiệm thời gian</string>
     <string name="dry_clean_service">Dịch vụ giặt khô</string>
     <string name="dry_clean_desc">Giặt khô cao cấp cho đồ sang trọng</string>
+    <string name="wash_shoes_service">Dịch vụ giặt giày</string>
+    <string name="wash_shoes_desc">Vệ sinh và làm sạch giày chuyên nghiệp</string>
     
     <!-- Item Types -->
     <string name="shirt">Áo sơ mi</string>
@@ -75,6 +153,12 @@
     <string name="curtain">Rèm cửa</string>
     <string name="bedsheet">Ga trải giường</string>
     <string name="towel">Khăn tắm</string>
+    <string name="sneakers">Giày sneaker</string>
+    <string name="leather_shoes">Giày da</string>
+    <string name="high_heels">Giày cao gót</string>
+    <string name="sports_shoes">Giày thể thao</string>
+    <string name="boots">Giày bốt</string>
+    <string name="sandals">Giày sandal</string>
     
     <!-- Time Estimates -->
     <string name="hours_24">24 giờ</string>
@@ -94,6 +178,7 @@
     <!-- Prices (VND) -->
     <string name="vnd">đ</string>
     <string name="per_item">/món</string>
+    <string name="per_pair">/đôi</string>
     <string name="per_kg">/kg</string>
 
     <!-- Login Screen -->
@@ -113,6 +198,7 @@
     <string name="error_invalid_email">Email không hợp lệ</string>
     <string name="error_empty_password">Vui lòng nhập mật khẩu</string>
     <string name="error_invalid_password">Mật khẩu phải có ít nhất 6 ký tự</string>
+    <string name="error_empty_phone">Vui lòng nhập số điện thoại</string>
     
     <!-- Login Messages -->
     <string name="login_success">Đăng nhập thành công!</string>
@@ -287,4 +373,53 @@
     <string name="help_center">Trung Tâm Trợ Giúp</string>
     <string name="need_more_help">Cần thêm trợ giúp?</string>
     <string name="contact_us_anytime">Liên hệ chúng tôi bất cứ lúc nào</string>
+
+    <!-- Message/Chat Screen -->
+    <string name="messages">Tin nhắn</string>
+    <string name="type_message">Nhập tin nhắn...</string>
+    <string name="send">Gửi</string>
+    <string name="attach">Đính kèm</string>
+    <string name="camera">Camera</string>
+    <string name="emoji">Emoji</string>
+    <string name="typing">Đang nhập...</string>
+    <string name="no_messages">Chưa có tin nhắn</string>
+    <string name="start_conversation">Bắt đầu cuộc trò chuyện với chúng tôi</string>
+    <string name="uploading_image">Đang tải ảnh lên...</string>
+    <string name="image_sent">Ảnh đã gửi thành công</string>
+    <string name="camera_permission_required">Cần quyền truy cập camera</string>
+    <string name="gallery_permission_required">Cần quyền truy cập thư viện ảnh</string>
+    <string name="image_error">Lỗi tạo file ảnh</string>
+    <string name="emoji_coming_soon">Emoji picker sẽ được thêm sau</string>
+
+    <!-- Blog Section -->
+    <string name="blog_title">Blog &amp; Tin tức</string>
+    <string name="blog_subtitle">Cập nhật những tin tức và mẹo vặt hữu ích về vệ sinh và chăm sóc giày dép</string>
+    <string name="blog_categories">Danh mục</string>
+    <string name="latest_posts">Bài viết mới nhất</string>
+    <string name="view_all">Xem tất cả</string>
+    <string name="featured_post">Nổi bật</string>
+
+    <!-- Blog Categories -->
+    <string name="category_cleaning_tips">Mẹo vệ sinh</string>
+    <string name="category_care_guide">Hướng dẫn chăm sóc</string>
+    <string name="category_news">Tin tức</string>
+
+    <!-- Featured Post Sample -->
+    <string name="featured_title">Cách vệ sinh giày da hiệu quả tại nhà</string>
+    <string name="featured_excerpt">Hướng dẫn chi tiết các bước vệ sinh giày da một cách chuyên nghiệp, giúp duy trì độ bền và vẻ đẹp của đôi giày.</string>
+
+    <!-- Sample Blog Post -->
+    <string name="sample_post_title">Bảo quản giày dép đúng cách để tăng tuổi thọ</string>
+    <string name="sample_post_excerpt">Những mẹo đơn giản nhưng hiệu quả giúp bạn bảo quản giày dép lâu dài, tránh hư hỏng và tiết kiệm chi phí thay mới.</string>
+    <string name="sample_post_date">15 Dec 2024</string>
+    <string name="sample_read_time">3 phút đọc</string>
+
+    <!-- Blog Actions -->
+    <string name="read_more">Đọc thêm</string>
+    <string name="share_post">Chia sẻ</string>
+    <string name="bookmark_post">Lưu lại</string>
+
+    <!-- Quick Actions -->
+    <string name="dat_ve_sinh">BOOK ĐƠN</string>
+    <string name="dat_ve_sinh_desc">Đặt dịch vụ vệ sinh tại chỗ</string>
 </resources>

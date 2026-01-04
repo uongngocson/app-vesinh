@@ -53,16 +53,17 @@
             android:layout_below="@id/item_recommended_price"
             android:layout_alignParentEnd="true"
             android:fontFamily="@font/nunito_semi_bold"
-            android:text="Score"
+            android:text="Rating"
             android:textColor="@color/white" />
 
         <TextView
+            android:id="@+id/item_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:fontFamily="@font/nunito_black"
-            android:text="Closed"
+            android:text="Open"
             android:textColor="@color/light_sea_green" />
 
         <ImageView

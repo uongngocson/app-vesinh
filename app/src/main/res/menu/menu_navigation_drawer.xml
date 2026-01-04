@@ -14,6 +14,10 @@
             android:icon="@drawable/ic_setting"
             android:title="Cài đặt" />
         <item
+            android:id="@+id/nav_blog"
+            android:icon="@drawable/ic_notifications"
+            android:title="Blog &amp; Tin tức" />
+        <item
             android:id="@+id/nav_help"
             android:icon="@drawable/ic_help"
             android:title="Trợ giúp" />

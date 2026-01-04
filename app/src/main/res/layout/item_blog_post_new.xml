@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/article_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardPreventCornerOverlap="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Article Image -->
+        <ImageView
+            android:id="@+id/article_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_shirt"
+            app:layout_constraintDimensionRatio="1:1"
+            tools:ignore="ContentDescription" />
+
+        <!-- Article Content -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Category Badge -->
+            <TextView
+                android:id="@+id/article_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_item_rounded"
+                android:fontFamily="@font/nunito_bold"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp"
+                android:text="Mẹo vệ sinh"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
+
+            <!-- Article Title -->
+            <TextView
+                android:id="@+id/article_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="Cách vệ sinh giày da hiệu quả tại nhà"
+                android:textColor="@color/dark_late_gray"
+                android:textSize="16sp"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <!-- Article Excerpt -->
+            <TextView
+                android:id="@+id/article_excerpt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/nunito_semi_bold"
+                android:text="Hướng dẫn chi tiết các bước vệ sinh và bảo quản giày da đúng cách, giúp đôi giày của bạn luôn bền đẹp."
+                android:textColor="@color/dark_late_gray"
+                android:textSize="14sp"
+                android:alpha="0.7"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <!-- Article Meta -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/article_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:text="15 Dec 2024"
+                    android:textColor="@color/dark_late_gray"
+                    android:textSize="12sp"
+                    android:alpha="0.6" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/ic_search_services"
+                        android:tint="@color/dark_late_gray"
+                        android:alpha="0.6"
+                        tools:ignore="ContentDescription,UseAppTint" />
+
+                    <TextView
+                        android:id="@+id/article_read_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_semi_bold"
+                        android:text="3 phút đọc"
+                        android:textColor="@color/dark_late_gray"
+                        android:textSize="12sp"
+                        android:alpha="0.6" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Arrow Icon -->
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/ic_arrow_right"
+            android:tint="@color/dark_late_gray"
+            android:alpha="0.6"
+            tools:ignore="ContentDescription,UseAppTint" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

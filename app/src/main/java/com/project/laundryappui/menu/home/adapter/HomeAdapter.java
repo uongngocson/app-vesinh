@@ -33,18 +33,21 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        HomeModel list = listHome.get(position);
+        HomeModel store = listHome.get(position);
 
-        holder.imageRecommended.setBackgroundResource(list.getImage());
-        holder.textName.setText(list.getName());
-        holder.textPrice.setText(list.getPrice());
-        holder.textLocation.setText(list.getLocation());
-        holder.containerRecommended.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                view.getContext().startActivity(new Intent(view.getContext(), HomeDetailActivity.class));
-//                Toast.makeText(view.getContext(), "Clicked!", Toast.LENGTH_SHORT).show();
-            }
+        // Set dữ liệu lên view
+        if (store.getImage() != 0) {
+            holder.imageRecommended.setImageResource(store.getImage());
+        }
+        holder.textName.setText(store.getName());
+        holder.textPrice.setText(store.getPrice());
+        holder.textLocation.setText(store.getLocation());
+        
+        // Click listener - pass store ID sang HomeDetailActivity
+        holder.containerRecommended.setOnClickListener(view -> {
+            Intent intent = new Intent(view.getContext(), HomeDetailActivity.class);
+            intent.putExtra("STORE_ID", store.getId());
+            view.getContext().startActivity(intent);
         });
     }
 

@@ -392,9 +392,111 @@
           "category": "bedding"
         }
       ]
+    },
+    {
+      "id": "WASH_SHOES",
+      "name": "Dịch vụ giặt giày",
+      "name_key": "wash_shoes_service",
+      "description": "Vệ sinh và làm sạch giày chuyên nghiệp",
+      "description_key": "wash_shoes_desc",
+      "icon": "ic_more",
+      "estimated_time": "48 giờ",
+      "estimated_time_key": "hours_48",
+      "express_time": "Nhanh 3h",
+      "express_time_key": "express_3h",
+      "features": [
+        {
+          "icon": "ic_start",
+          "title": "Chất lượng cao",
+          "title_key": "feature_quality"
+        },
+        {
+          "icon": "ic_security",
+          "title": "An toàn cho chất liệu",
+          "title_key": "feature_safe"
+        },
+        {
+          "icon": "ic_favorite",
+          "title": "Thơm lâu",
+          "title_key": "feature_fragrant"
+        }
+      ],
+      "items": [
+        {
+          "id": "wash_shoes_sneakers",
+          "name": "Giày sneaker",
+          "name_key": "sneakers",
+          "price": 35000,
+          "unit": "/đôi",
+          "unit_key": "per_pair",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_more",
+          "category": "shoes"
+        },
+        {
+          "id": "wash_shoes_leather",
+          "name": "Giày da",
+          "name_key": "leather_shoes",
+          "price": 50000,
+          "unit": "/đôi",
+          "unit_key": "per_pair",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_more",
+          "category": "shoes"
+        },
+        {
+          "id": "wash_shoes_high_heels",
+          "name": "Giày cao gót",
+          "name_key": "high_heels",
+          "price": 40000,
+          "unit": "/đôi",
+          "unit_key": "per_pair",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_more",
+          "category": "shoes"
+        },
+        {
+          "id": "wash_shoes_sports",
+          "name": "Giày thể thao",
+          "name_key": "sports_shoes",
+          "price": 30000,
+          "unit": "/đôi",
+          "unit_key": "per_pair",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_more",
+          "category": "shoes"
+        },
+        {
+          "id": "wash_shoes_boots",
+          "name": "Giày bốt",
+          "name_key": "boots",
+          "price": 60000,
+          "unit": "/đôi",
+          "unit_key": "per_pair",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_more",
+          "category": "shoes"
+        },
+        {
+          "id": "wash_shoes_sandals",
+          "name": "Giày sandal",
+          "name_key": "sandals",
+          "price": 25000,
+          "unit": "/đôi",
+          "unit_key": "per_pair",
+          "estimated_time": "48 giờ",
+          "estimated_time_key": "hours_48",
+          "icon": "ic_more",
+          "category": "shoes"
+        }
+      ]
     }
   ],
   "version": "1.0",
   "last_updated": "2024-12-24"
 }
-

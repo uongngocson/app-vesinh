@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Blog image -->
+        <ImageView
+            android:id="@+id/blog_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_post2" />
+
+        <!-- Category badge -->
+        <TextView
+            android:id="@+id/blog_category"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_rounded_green"
+            android:elevation="4dp"
+            android:fontFamily="@font/nunito_bold"
+            android:gravity="center"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:text="Mẹo giặt ủi"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <!-- Content container with padding -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/blog_image"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Blog title -->
+            <TextView
+                android:id="@+id/blog_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_black"
+                android:lineSpacingExtra="6dp"
+                android:maxLines="2"
+                android:text="Cách giặt đồ trắng hiệu quả tại nhà"
+                android:textColor="@color/dark_late_gray"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Blog description -->
+            <TextView
+                android:id="@+id/blog_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunito_regular"
+                android:lineSpacingExtra="4dp"
+                android:maxLines="3"
+                android:text="Hướng dẫn chi tiết các bước giặt đồ trắng đúng cách để giữ màu trắng sáng và bền đẹp theo thời gian..."
+                android:textColor="@color/dark_gray"
+                android:textSize="15sp" />
+
+            <!-- Author info and date -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_user"
+                    android:tint="@color/light_sea_green" />
+
+                <TextView
+                    android:id="@+id/blog_author"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:text="Papa Laundry"
+                    android:textColor="@color/light_sea_green"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_clock"
+                    android:tint="@color/dark_gray" />
+
+                <TextView
+                    android:id="@+id/blog_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="2 giờ trước"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_eye"
+                    android:tint="@color/dark_gray" />
+
+                <TextView
+                    android:id="@+id/blog_views"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="1.2k"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Read more indicator -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:text="Đọc thêm"
+                    android:textColor="@color/light_sea_green"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/ic_arrow_right"
+                    android:tint="@color/light_sea_green" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

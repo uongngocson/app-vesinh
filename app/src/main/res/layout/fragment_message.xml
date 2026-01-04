@@ -1,68 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".menu.message.MessageFragment">
 
-    <RelativeLayout
-        android:background="@drawable/bg_half_rounded2"
+    <!-- Toolbar/Header -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_message"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:elevation="2dp"
+        app:titleTextColor="@color/dark_late_gray">
 
-        <!-- Layout After Login -->
         <RelativeLayout
-            android:id="@+id/container_after_login"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview_message"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </RelativeLayout>
-
-        <!-- Layout Before Login -->
-        <RelativeLayout
-            android:id="@+id/container_before_login"
-            android:visibility="visible"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/bg_message"
-                android:src="@drawable/bg_message"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"/>
-
-            <Button
-                android:id="@+id/button_login"
-                android:text="Login"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/bg_item_rounded"
-                android:layout_below="@+id/bg_message"
-                android:layout_centerHorizontal="true"
-                android:layout_width="100dp"
-                android:layout_height="40dp"/>
 
             <TextView
-                android:layout_below="@+id/button_login"
-                android:textSize="18sp"
-                android:layout_marginTop="10dp"
-                android:textAlignment="center"
-                android:lineSpacingExtra="5dp"
-                android:layout_marginBottom="70dp"
-                android:textColor="@color/dark_late_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:fontFamily="@font/nunito_black"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
-                android:text="Login with your Whatsapp number for use this feature"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:text="Tin nhắn"
+                android:textColor="@color/dark_late_gray"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_back"
+                tools:ignore="ContentDescription" />
+
         </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Messages RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_messages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/message_input_container"
+        android:layout_below="@+id/toolbar_message"
+        android:background="@color/white"
+        android:clipToPadding="false"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_message_sent" />
+
+    <!-- Message Input Container -->
+    <LinearLayout
+        android:id="@+id/message_input_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp">
+
+        <!-- Attach Button -->
+        <ImageButton
+            android:id="@+id/btn_attach"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_attach"
+            tools:ignore="ContentDescription" />
+
+        <!-- Camera Button -->
+        <ImageButton
+            android:id="@+id/btn_camera"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_camera"
+            tools:ignore="ContentDescription" />
+
+        <!-- Message Input -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_message_input"
+            android:minHeight="40dp">
+
+            <EditText
+                android:id="@+id/et_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="40dp"
+                android:background="@android:color/transparent"
+                android:hint="Nhập tin nhắn..."
+                android:imeOptions="actionSend"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLines="4"
+                android:minHeight="40dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/dark_late_gray"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp" />
+
+            <!-- Emoji Button -->
+            <ImageButton
+                android:id="@+id/btn_emoji"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="6dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_emoji"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <!-- Send Button -->
+        <ImageButton
+            android:id="@+id/btn_send"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_send_button"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_send"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+    <!-- Typing Indicator -->
+    <TextView
+        android:id="@+id/tv_typing_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/message_input_container"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/bg_typing_indicator"
+        android:fontFamily="@font/nunito_regular"
+        android:paddingStart="12dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="4dp"
+        android:text="Đang nhập..."
+        android:textColor="@color/dark_late_gray"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <!-- Empty State -->
+    <RelativeLayout
+        android:id="@+id/empty_state_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_message"
+        android:layout_above="@+id/message_input_container"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:alpha="0.5"
+                android:src="@drawable/ic_message_empty"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Chưa có tin nhắn"
+                android:textColor="@color/dark_late_gray"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text="Bắt đầu cuộc trò chuyện với chúng tôi"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+        </LinearLayout>
     </RelativeLayout>
-</FrameLayout>
+
+    <!-- Loading State -->
+    <RelativeLayout
+        android:id="@+id/loading_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_message"
+        android:layout_above="@+id/message_input_container"
+        android:background="@color/white"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

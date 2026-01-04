@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="64dp"
+    android:layout_marginBottom="4dp">
+
+    <!-- Avatar -->
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_circle"
+        android:padding="2dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_user"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:id="@+id/message_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/iv_avatar"
+        android:background="@drawable/bg_message_received"
+        android:maxWidth="280dp"
+        android:minHeight="40dp"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Sender Name (if group chat) -->
+        <TextView
+            android:id="@+id/tv_sender_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_bold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="Support Team"
+            tools:visibility="visible" />
+
+        <!-- Message Content -->
+        <TextView
+            android:id="@+id/tv_message_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/nunito_regular"
+            android:textColor="@color/dark_late_gray"
+            android:textSize="14sp"
+            tools:text="Hello! Thank you for contacting us. How can we help you today?" />
+
+        <!-- Message Image (if any) -->
+        <ImageView
+            android:id="@+id/iv_message_image"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            tools:src="@drawable/bg_post1"
+            tools:visibility="visible" />
+
+        <!-- Timestamp -->
+        <TextView
+            android:id="@+id/tv_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/nunito_regular"
+            android:textColor="@color/gray"
+            android:textSize="11sp"
+            tools:text="10:25 AM" />
+
+    </LinearLayout>
+
+</RelativeLayout>

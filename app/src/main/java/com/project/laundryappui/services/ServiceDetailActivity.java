@@ -105,7 +105,14 @@ public class ServiceDetailActivity extends AppCompatActivity {
                 serviceDescription.setText(R.string.dry_clean_desc);
                 estimatedTime.setText(R.string.hours_72);
                 break;
-                
+
+            case "WASH_SHOES":
+                serviceIcon.setImageResource(R.drawable.ic_more);
+                serviceName.setText(R.string.wash_shoes_service);
+                serviceDescription.setText(R.string.wash_shoes_desc);
+                estimatedTime.setText(R.string.hours_48);
+                break;
+
             default:
                 serviceIcon.setImageResource(R.drawable.ic_more);
                 serviceName.setText(R.string.service_detail);

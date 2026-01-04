@@ -3,6 +3,15 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +21,17 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.LaundryAppUI.NoActionBar">
+
+        <!-- File Provider for camera capture -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.project.laundryappui.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
         
         <!-- Login Activity - Launcher -->
         <activity android:name=".auth.LoginActivity"
@@ -64,6 +84,26 @@
         
         <!-- Service Detail Activity -->
         <activity android:name=".services.ServiceDetailActivity"
+            android:exported="false" />
+
+        <!-- Shoe Booking Activity -->
+        <activity android:name=".ShoeBookingActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" />
+
+        <!-- Map Location Picker Activity -->
+        <activity android:name=".MapLocationPickerActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" />
+
+        <!-- Worker Found Activity -->
+        <activity android:name=".WorkerFoundActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" />
+
+        <!-- Booking Confirmed Activity -->
+        <activity android:name=".BookingConfirmedActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
     </application>
 

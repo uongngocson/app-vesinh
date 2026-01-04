@@ -263,7 +263,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/nunito_bold"
-                        android:text="@string/membership_card"
+                        android:text="@string/wash_shoes_online"
                         android:textAlignment="center"
                         android:textColor="@color/dark_late_gray"
                         android:textSize="11sp"
@@ -387,6 +387,7 @@
                 <RelativeLayout
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
                     android:gravity="center_horizontal">
 
                     <ImageView
@@ -406,6 +407,34 @@
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/nunito_bold"
                         android:text="@string/more"
+                        android:textAlignment="center"
+                        android:textColor="@color/dark_late_gray"
+                        android:textSize="11sp"
+                        tools:ignore="SmallSp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/image_5"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/bg_item_choose_services"
+                        android:padding="15dp"
+                        android:src="@drawable/ic_more"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/image_5"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="@string/wash_shoes"
                         android:textAlignment="center"
                         android:textColor="@color/dark_late_gray"
                         android:textSize="11sp"

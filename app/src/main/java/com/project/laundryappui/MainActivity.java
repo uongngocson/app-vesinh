@@ -28,6 +28,7 @@ import com.project.laundryappui.menu.home.HomeFragment;
 import com.project.laundryappui.menu.message.MessageFragment;
 import com.project.laundryappui.menu.notification.NotificationFragment;
 import com.project.laundryappui.menu.search.SearchFragment;
+import com.project.laundryappui.menu.blog.BlogFragment;
 import com.project.laundryappui.help.HelpActivity;
 import com.project.laundryappui.profile.MyAccountActivity;
 import com.project.laundryappui.support.SupportActivity;
@@ -71,6 +72,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private void initViews() {
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
+
+        // Button đặt vệ sinh
+        findViewById(R.id.btn_dat_ve_sinh).setOnClickListener(v -> navigateToShoeBooking());
 
         /**
          * Menu Navigation Drawer
@@ -165,6 +169,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                     // Navigate to Change Password
                     Intent intent = new Intent(MainActivity.this, ChangePasswordActivity.class);
                     startActivity(intent);
+                } else if (itemId == R.id.nav_blog) {
+                    // Navigate to Blog
+                    loadFragment(new BlogFragment());
                 } else if (itemId == R.id.nav_help) {
                     // Navigate to Help
                     Intent intent = new Intent(MainActivity.this, HelpActivity.class);
@@ -204,7 +211,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.menu_profile) {
-            Uri uri = Uri.parse("https://github.com/achmadqomarudin");
+            Uri uri = Uri.parse("https://vesinhgiay24h.com/vi");
             startActivity(Intent.createChooser(new Intent(Intent.ACTION_VIEW, uri), "Choose Browser"));
         }
         return true;
@@ -241,6 +248,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 navigateToLogin();
             }
         });
+    }
+
+    /**
+     * Navigate đến ShoeBookingActivity
+     */
+    private void navigateToShoeBooking() {
+        Intent intent = new Intent(this, ShoeBookingActivity.class);
+        startActivity(intent);
     }
 
     /**

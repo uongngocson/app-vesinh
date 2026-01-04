@@ -33,6 +33,9 @@ public class ApiConfig {
     public static final String USERS_PROFILE = "users/profile";
     public static final String USERS_ADDRESSES = "users/addresses";
     public static final String USERS_AVATAR = "users/avatar";
+
+    // API Endpoints - Orders
+    public static final String ORDERS_CLEANING_BOOKING = "orders/cleaning-booking";
     
     // Timeouts
     public static final int CONNECT_TIMEOUT = 30; // seconds

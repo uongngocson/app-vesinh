@@ -8,6 +8,7 @@
     tools:context=".menu.home.home_detail.HomeDetailActivity">
 
     <ImageView
+        android:id="@+id/item_recommended_image"
         android:layout_width="match_parent"
         android:layout_height="280dp"
         android:scaleType="fitCenter"
@@ -226,6 +227,7 @@
                 android:tint="@color/dark_gray" />
 
             <Button
+                android:id="@+id/button_appointment"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_alignParentEnd="true"
